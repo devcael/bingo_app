@@ -3,10 +3,12 @@
 import 'package:bingo_app/exceptions/AlreadyExistsNumber.dart';
 import 'package:bingo_app/models/Number.dart';
 
+typedef TicketBoard = List<List<Number>>;
+
 class Ticket {
   int xLen;
   int yLen;
-  List<List<Number>> board = [];
+  TicketBoard board = [];
   Ticket({this.xLen = 9, this.yLen = 3}) {
     board = drawTicket();
   }
@@ -39,8 +41,8 @@ class Ticket {
     return hasNumber;
   }
 
-  List<List<Number>> drawTicket() {
-    List<List<Number>> ticket = [];
+  TicketBoard drawTicket() {
+    TicketBoard ticket = [];
 
     for (var y = 0; y < yLen; y++) {
       List<Number> row = [];
